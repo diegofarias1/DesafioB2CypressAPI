@@ -1,0 +1,16 @@
+{
+  "baseUrl": "http://localhost:8989/",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "reporter": "reporters/custom.js",
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "quite": true,
+      "overwrite": false,
+      "html": false,
+      "json": true
+    }
+  },
+  "projectId": "5hkedp"
+}
