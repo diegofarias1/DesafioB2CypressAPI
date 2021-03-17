@@ -11,8 +11,6 @@
 - [ ]	1) Implementar 50 scripts de testes que manipulem uma aplicação cuja interface é uma API REST. 
  
 - [ ]	2) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven.
-É possível verificar ao acessar a classe `CriarNotaDeUmaTarefaTests.cs` com o método `DadosValidos(ArrayList testData)`
-
 
 - [ ]	3) O projeto deve tratar autenticação.
 
