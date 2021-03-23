@@ -6,8 +6,8 @@ describe('Create Projects', () => {
       cy.createProject()    
   })
   it('Should Create Project',() => {
-    let token = 'ypKoT0YNYozVMP4MFD4bj-zmK-By4IXs'
-    cy.request({
+    let token = Cypress.config('token')
+    cy.api({
         method: 'POST',
         url: '/api/rest/projects/', 
         headers:{ Authorization: token},

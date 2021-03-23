@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('Create users sucess', () => {
   afterEach(() => {
       cy.deleteProject()
@@ -5,16 +7,16 @@ describe('Create users sucess', () => {
   beforeEach(() => {
       cy.createProject()    
   })
-  it('Should get issues',() => {
+  
+  it('Should Create User',() => {
     let metodo = 'POST'
     let url = '/api/rest/users/'
     cy.createUsers(metodo, url)
-    cy.get('@response')
-    let res = cy.get('@response')
-      expect(res.status).to.be.equal(201)
-      console.log(res.body)
-      expect(res.body.user.email).to.equal('diego@base.com.br')
-      expect(res.body.user.email).to.match(/^[^\s@]+@[^\s@]+$/)
+    .then(response => {
+      expect(response.status).to.equal(201)
+      console.log(response.body)
+      expect(response.body.user.email).to.match(/^[^\s@]+@[^\s@]+$/)
     
   })
+      })
 })

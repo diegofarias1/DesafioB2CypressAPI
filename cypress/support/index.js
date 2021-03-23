@@ -15,11 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import './api_ProdutosCommands'
 import './api_GeneralCommands'
 import './api_UsersCommands'
 import './api_ProjectsCommands'
 import './api_DatabaseCommands' 
+import '@bahmutov/cy-api/support'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

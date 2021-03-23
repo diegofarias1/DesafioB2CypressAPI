@@ -11,8 +11,8 @@ Cypress.Commands.add('windowAlert', () => {
     })
 })
 Cypress.Commands.add('getRequest', (metodo, url) => {
-   let token = 'ypKoT0YNYozVMP4MFD4bj-zmK-By4IXs';
-   cy.request({
+    let token = Cypress.config('token')
+   cy.api({
      method: metodo, //or POST
      url: url,
      headers:{

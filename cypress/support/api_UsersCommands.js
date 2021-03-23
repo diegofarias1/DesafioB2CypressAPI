@@ -1,23 +1,21 @@
+/// <reference types="Cypress" />
+const faker = require('faker')
+
 Cypress.Commands.add('createUsers', (metodo, url) => {
-  let token = 'ypKoT0YNYozVMP4MFD4bj-zmK-By4IXs';
-  cy.request({
+  let token = Cypress.config('token')
+  cy.api({
     method: metodo, //or POST
     url: url,
     headers:{
      "Authorization": token},
      body: {
-      "username": "diego",
+      "username": "diego" + faker.random.number(),
       "password": "123456",
       "real_name": "Diego Farias",
-      "email": "diego@base.com.br",
+      "email": "diego" + faker.random.number() +"@base.com.br",
       "access_level": { "name": "updater" },
       "enabled": true,
       "protected": false
     } 
-   }).should('not.be.empty')
-   .then(token => {
-       return token
-       }).as('response')
- 
-
+   })
 })

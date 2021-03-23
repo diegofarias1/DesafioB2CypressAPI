@@ -2,7 +2,7 @@
 
 
 Cypress.Commands.add('POST_generateTokenAdministrator', () =>{
-    cy.request({
+    cy.api({
         method: 'POST',
         url: '/login',
         body: {
@@ -17,12 +17,3 @@ Cypress.Commands.add('POST_generateTokenAdministrator', () =>{
         cy.log(localStorage.getItem('token'))
     })      
 })
-Cypress.Commands.add('POST_CadastrarProjectSucess', bodyJson =>{
-    let token = 'ypKoT0YNYozVMP4MFD4bj-zmK-By4IXs'
-    cy.request({
-        method: 'POST',
-        url: '/api/rest/projects/',
-        body: bodyJson,
-        headers:{"Authorization": token  } 
-         })
-        })
