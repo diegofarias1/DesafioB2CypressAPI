@@ -1,6 +1,7 @@
 {
   "baseUrl": "http://localhost:8989/",
-  "token":"v_lPkzTUTNmN8Dgv0G4gYz0sTKX6lXHb",
+  "token1": "v_lPkzTUTNmN8Dgv0G4gYz0sTKX6lXHb",
+  "token": "wxDoWJV9Ar9NvaruhWXEvkMeYvVT1O2V",
   "reporter": "cypress-multi-reporters",
   "reporterOptions": {
     "reporterEnabled": "mochawesome",
