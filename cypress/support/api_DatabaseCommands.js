@@ -18,3 +18,8 @@ Cypress.Commands.add('deleteProject', () => {
   const query = 'DELETE from mantis_project_table'
   cy.task('queryDatabase', { dbName, query }).as('Delete projects')
 })
+Cypress.Commands.add('deleteUsers', () => {
+  const dbName = 'bugtracker'
+  const query = "delete FROM mantis_user_table WHERE username <> 'administrator'"
+  cy.task('queryDatabase', { dbName, query }).as('Delete Users')
+})
