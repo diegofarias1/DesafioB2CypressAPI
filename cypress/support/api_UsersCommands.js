@@ -135,3 +135,20 @@ Cypress.Commands.add('DeleteUsersCreated', (id) => {
     },
   })
 })
+Cypress.Commands.add('CreateUsers', (username,password,real_name,email,access_level,enabled,protecteduser) => {
+  let token = Cypress.config('token')
+  cy.api({
+    method: 'Post',
+    url: '/api/rest/users/',
+    headers: {"Authorization": token},
+    body:{
+      "username": username,
+      "password": password,
+      "real_name": real_name,
+      "email": email,
+      "access_level": access_level,
+      "enabled": enabled,
+      "protected": protecteduser
+    }
+  })
+})

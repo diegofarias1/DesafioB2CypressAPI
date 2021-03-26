@@ -18,7 +18,8 @@ import './commands'
 import './api_GeneralCommands'
 import './api_UsersCommands'
 import './api_ProjectsCommands'
-import './api_DatabaseCommands' 
+import './api_DatabaseCommands'
+import './api_IssuesCommands'
 import '@bahmutov/cy-api/support'
 
 // Alternatively you can use CommonJS syntax:

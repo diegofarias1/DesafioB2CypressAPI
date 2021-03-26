@@ -133,6 +133,19 @@ describe('Testes MantisBugTracker', () => {
             })
         })
     })
+    it.only('Criar um Usuario', () => {
+      let username = "vtest12"
+      let password = "p@ssw0rd"
+      let real_name = "Victor Test12"
+      let email = "victor12@example2.com"
+      let access_level = { "name": "updater" }
+      let enabled = true
+      let protecteduser = false
+      cy.CreateUsers(username, password, real_name, email, access_level, enabled, protecteduser)
+        .then(response => {
+            expect(response.status).to.equal(200)
+        })
+    })
   })
 })
 
