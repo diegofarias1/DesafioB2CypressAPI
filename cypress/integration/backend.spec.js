@@ -1,7 +1,7 @@
 ///<reference types="Cypress"/>
 
 //Import de Page
-
+/*
 describe('Testes MantisBugTracker', () => {
     afterEach(() => {
         cy.deleteProject()
@@ -299,6 +299,6 @@ describe('Tasks', () => {
     })
 })
 
-
+*/
 
 

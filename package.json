@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cy:run" : "cypress run --record --key b03500cd-a42c-4159-ba47-52438b603d6e",
+    "start": "node your-script.js",
+    "cy:parallel": "cypress-parallel -s cy:run -t 5 -d cypress/integration -a '\"--config baseUrl=http://localhost:8989\"'",
     "pretest": "npm run clean-reports",
     "clean-reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
     "test": "cypress run",
@@ -28,6 +31,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.168",
     "chai": "^4.3.3",
+    "cypress-parallel": "^0.1.9",
     "faker": "^5.1.0",
     "mysql": "^2.18.1"
   }

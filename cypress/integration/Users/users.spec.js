@@ -143,7 +143,7 @@ describe('Testes MantisBugTracker', () => {
       let protecteduser = false
       cy.CreateUsers(username, password, real_name, email, access_level, enabled, protecteduser)
         .then(response => {
-            expect(response.status).to.equal(200)
+            expect(response.status).to.equal(201)
         })
     })
   })
