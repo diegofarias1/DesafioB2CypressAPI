@@ -24,3 +24,11 @@ Cypress.Commands.add('CriarIssueminimal', (metodo, url, summary, description, ca
     }
   })
 })
+Cypress.Commands.add('SearchIssuesProjects', (idproject) => {
+  let token = Cypress.config('token')
+  cy.api({
+    method: 'GET',
+    url:'/api/rest/issues?project_id=' + idproject,
+    headers: { "Authorization": token },
+  })
+})

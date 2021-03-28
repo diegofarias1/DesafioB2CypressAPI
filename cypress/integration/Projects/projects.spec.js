@@ -199,23 +199,5 @@ describe('Testes de Projetos', () => {
         })
       })
     })
-    it('Procurar Issue no projeto', () => {
-      let summary = 'sumario'
-      let description = 'descricao'
-      let categoryname = 'backend'
-      let projectname = 'Base10'
-      let metodo = 'POST'
-      let url = '/api/rest/issues/'
-      cy.CriarIssueminimal(metodo, url, summary, description, categoryname, projectname)
-        .then(response => {
-          expect(response.status).to.equal(201)
-          expect(response.body.issue.summary).to.equal('sumario')
-          expect(response.body.issue.description).to.equal('descricao')
-          expect(response.body.issue.project.name).to.equal('Base10')
-        
-        
-        })
-        cy.SearchAllIssues(metodo,url)
-    })
   })
 })

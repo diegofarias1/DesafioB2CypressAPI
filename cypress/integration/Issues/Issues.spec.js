@@ -86,5 +86,23 @@ describe('Tests Issues', () => {
           expect(response.body.message).contains('Description not specified')
         })
     })
+    it.only('Procurar Issue no projeto', () => {
+      let summary = 'sumario'
+      let description = 'descricao'
+      let categoryname = 'backend'
+      let projectname = 'Base10'
+      let metodo = 'POST'
+      let url = '/api/rest/issues/'
+      cy.CriarIssueminimal(metodo, url, summary, description, categoryname, projectname)
+        .then(response => {
+          let idproject = response.body.issue.project.id
+          console.log(idproject)
+          cy.SearchIssuesProjects(idproject)
+          .then(response => {
+          expect(response.status).to.equal(200)
+          expect(response.body.issues[0].project.name).to.equal('Base10') 
+          })
+        })
+    })
   })
 })
