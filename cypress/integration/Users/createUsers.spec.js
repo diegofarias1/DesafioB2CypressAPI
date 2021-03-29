@@ -1,4 +1,3 @@
-/*
 /// <reference types="Cypress" />
 const faker = require('faker')
 
@@ -31,16 +30,6 @@ const faker = require('faker')
         .then(response => {
           expect(response.status).to.equal(201)
           expect(response.body.user.email).to.contains('diego')
-        })
-    })
-    it('Search User Existed', () => {
-      let metodo = 'GET'
-      let url = '/api/rest/users/me'
-      cy.SearchExitedUser(metodo, url)
-        .then(response => {
-          expect(response.status).to.equal(200)
-          expect(response.body.id).to.equal(1)
-          expect(response.body.email).to.equal('root@localhost')
         })
     })
     it('Criar usuario sem o nome preenchido', () => {
@@ -120,19 +109,6 @@ const faker = require('faker')
           expect(response.body.user.email).contain('email')
         })
     })
-    it('Delete user', () => {
-      let id = null
-      let metodo = 'POST'
-      let url = '/api/rest/users/'
-      cy.createUsers(metodo, url,)
-        .then(res => {
-          id = res.body.user.id
-          cy.DeleteUsersCreated(id)
-            .then(response => {
-              expect(response.status).to.equal(204)
-            })
-        })
-    })
     it('Criar um Usuario', () => {
       let username = "vtest12"
       let password = "p@ssw0rd"
@@ -161,4 +137,3 @@ const faker = require('faker')
     })
   })
 
-*/

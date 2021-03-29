@@ -119,3 +119,21 @@ Cypress.Commands.add('CreateProjectESTADOSucess', (metodo, url, statusid, status
     }
   })
 })
+Cypress.Commands.add('buscarProjetoCadastrado', (projectid) => {
+  let token = Cypress.config('token')
+  cy.api({
+    method: 'GET',
+    url: '/api/rest/projects/' + projectid,
+    headers: { "Authorization": token },
+    failOnStatusCode: false
+  })
+})
+Cypress.Commands.add('deletarprojeto', (projectid) => {
+  let token = Cypress.config('token')
+  cy.api({
+    method: 'DELETE',
+    url: '/api/rest/projects/' + projectid,
+    headers: { "Authorization": token },
+    failOnStatusCode: false
+  })
+})

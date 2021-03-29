@@ -8,10 +8,10 @@
     "reporter": "reporters/custom.js",
     "mochawesomeReporterOptions": {
       "reportDir": "cypress/reports/mocha",
-      "quite": true,
+      "quite": false,
       "overwrite": false,
-      "html": true,
-      "json": true
+      "html": false,
+      "json": false
     }
   },
   "projectId": "5hkedp"

@@ -20,6 +20,7 @@ import './api_UsersCommands'
 import './api_ProjectsCommands'
 import './api_DatabaseCommands'
 import './api_IssuesCommands'
+import './api_FiltersCommands'
 import '@bahmutov/cy-api/support'
 
 // Alternatively you can use CommonJS syntax:
