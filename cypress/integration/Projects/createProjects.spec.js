@@ -1,13 +1,10 @@
 ///<reference types="Cypress"/>
 
-const projetos = require('../../fixtures/Produtos/projectsList.json')
-const faker = require('faker')
-
 afterEach(() => {
   cy.deleteProject()
 })
-describe('Projetos', () => {
-  it('Criar Projetos Campos Obrigatorios', () => {
+describe('Create projects testing', () => {
+  it('Should create project with required fields', () => {
     let token = Cypress.config('token')
     cy.api({
       method: 'POST',
@@ -37,7 +34,7 @@ describe('Projetos', () => {
       expect(response.body.project.name).to.equal('Base10API')
     })
   })
-  it('Criar Projeto com Visibilidade Private', () => {
+  it('Should create project with visibility private', () => {
     let metodo = 'POST'
     let url = '/api/rest/projects/'
     let statusid = '50'
@@ -49,7 +46,7 @@ describe('Projetos', () => {
         expect(response.body.project.view_state.name).to.equal('private')
       })
   })
-  it('Criar Projeto com Visibilidade Public', () => {
+  it('Should create project with visibility public', () => {
     let metodo = 'POST'
     let url = '/api/rest/projects/'
     let statusid = '10'
@@ -61,7 +58,7 @@ describe('Projetos', () => {
         expect(response.body.project.view_state.name).to.equal('public')
       })
   })
-  it('Atualizar Projeto', () => {
+  it('Should update project', () => {
     cy.CreateProjectPadrao()
       .then(response => {
         let id = response.body.project.id
@@ -72,7 +69,7 @@ describe('Projetos', () => {
           })
       })
   })
-  it('Criar Projetos SEM Campos Obrigatorios', () => {
+  it('Should create project no required fields', () => {
     let token = Cypress.config('token')
     cy.api({
       method: 'POST',
@@ -100,7 +97,7 @@ describe('Projetos', () => {
       expect(response.body).contain('Fatal error')
     })
   })
-  it('Criar Projeto com estado "Desenvolvimento', () => {
+  it('Should create project with a state "Desenvolvimento', () => {
     let metodo = 'POST'
     let url = '/api/rest/projects/'
     let statusid = '10'
@@ -114,7 +111,7 @@ describe('Projetos', () => {
         expect(response.body.project.status.label).to.equal(`development`)
       })
   })
-  it('Criar Projeto com estado "release"', () => {
+  it('Should create project with a state "release"', () => {
     let metodo = 'POST'
     let url = '/api/rest/projects/'
     let statusid = '30'
@@ -128,7 +125,7 @@ describe('Projetos', () => {
         expect(response.body.project.status.label).to.equal(`release`)
       })
   })
-  it('Criar Projeto com estado "stable"', () => {
+  it('Should create project with a state "stable"', () => {
     let metodo = 'POST'
     let url = '/api/rest/projects/'
     let statusid = '50'
@@ -142,7 +139,7 @@ describe('Projetos', () => {
         expect(response.body.project.status.label).to.equal(`stable`)
       })
   })
-  it('Criar Projeto com estado "obsoleto"', () => {
+  it('Should create project with a state "obsoleto"', () => {
     let metodo = 'POST'
     let url = '/api/rest/projects/'
     let statusid = '70'

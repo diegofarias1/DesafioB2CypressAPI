@@ -137,3 +137,14 @@ Cypress.Commands.add('deletarprojeto', (projectid) => {
     failOnStatusCode: false
   })
 })
+Cypress.Commands.add('atualizarprojeto', (projectid,metodo,url,nameproject) => {
+  let token = Cypress.config('token')
+  cy.api({
+    method: metodo,
+    url: url + projectid,
+    headers: { "Authorization": token },
+    body:
+    { "name": nameproject},
+    failOnStatusCode: false
+  })
+})

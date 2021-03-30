@@ -130,6 +130,7 @@ Cypress.Commands.add('DeleteUsersCreated', (id) => {
   cy.api({
     method: 'DELETE',
     url: '/api/rest/users/' + id,
+    failOnStatusCode: false,
     headers: {
       "Authorization": token
     },

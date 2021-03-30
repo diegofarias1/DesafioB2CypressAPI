@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "_new1",
+    "name": "Projeto1",
     "status": {
        "id": 10,
        "name": "development",
@@ -18,7 +18,7 @@
  },
  {
   "id": 1,
-  "name": "_new2",
+  "name": "Projeto2",
   "status": {
      "id": 10,
      "name": "development",
@@ -35,7 +35,7 @@
 },
 {
   "id": 1,
-  "name": "_new3",
+  "name": "Projeto3",
   "status": {
      "id": 10,
      "name": "development",

@@ -104,3 +104,20 @@ Cypress.Commands.add('deleteIssueID', (issueid,metodo,url) => {
     failOnStatusCode: false,
   })
 })
+Cypress.Commands.add('updateIssue', (issueid,metodo,url,hadlername,statusname) => {
+  let token = Cypress.config('token')
+  cy.api({
+    method: metodo,
+    url: url + issueid,
+    headers: { "Authorization": token },
+    failOnStatusCode: false,
+    body: {
+      "handler": {
+        "name": hadlername
+      },
+      "status": {
+        "name": statusname
+      } 
+    }
+  })
+})

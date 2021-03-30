@@ -1,16 +1,7 @@
 ///<reference types="Cypress"/>
 
-const faker = require('faker')
-
-describe('Tests Issues', () => {
-  beforeEach(() => {
-    cy.createProject()
-  })
-  afterEach(() => {
-    cy.deleteProject()
-  })
   describe('Filters Tests', () => {
-    it('SearchAllFilters', () => {
+    it('Should search all filters', () => {
       let metodo = 'GET'
       let url = '/api/rest/filters'
       cy.SearchAllFilters(metodo, url)
@@ -19,4 +10,3 @@ describe('Tests Issues', () => {
         })
     })
   })
-})
