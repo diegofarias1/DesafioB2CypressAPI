@@ -3,16 +3,22 @@
   "token1": "v_lPkzTUTNmN8Dgv0G4gYz0sTKX6lXHb",
   "token": "wxDoWJV9Ar9NvaruhWXEvkMeYvVT1O2V",
   "reporter": "cypress-multi-reporters",
+  "projeto":"projeto",
   "reporterOptions": {
     "reporterEnabled": "mochawesome",
-    "reporter": "reporters/custom.js",
     "mochawesomeReporterOptions": {
       "reportDir": "cypress/reports/mocha",
-      "quite": false,
+      "quite": true,
       "overwrite": false,
-      "html": false,
-      "json": false
+      "html": true,
+      "json": true,
+      "reporter": "mocha-junit-reporter", 
+      "reporterOptions": { 
+      "mochaFile": "cypress / reports / junit / test-results. [hash] .xml", 
+      "testsuitesTitle": false 
+}
     }
   },
   "projectId": "5hkedp"
+
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:run" : "cypress run --record --key b03500cd-a42c-4159-ba47-52438b603d6e",
+    "cy:run": "cypress run --record --key b03500cd-a42c-4159-ba47-52438b603d6e",
     "start": "node your-script.js",
     "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/integration -a '\"--config baseUrl=http://localhost:8989\"'",
     "pretest": "npm run clean-reports",
@@ -23,8 +23,8 @@
     "chai-match": "^1.1.1",
     "cypress": "^6.1.0",
     "cypress-multi-reporters": "^1.4.0",
-    "mocha": "^8.2.1",
-    "mochawesome": "^6.2.1",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.1.0"
   },
@@ -33,6 +33,7 @@
     "chai": "^4.3.3",
     "cypress-parallel": "^0.1.9",
     "faker": "^5.1.0",
+    "mocha-junit-reporter": "^2.0.0",
     "mysql": "^2.18.1"
   }
 }
