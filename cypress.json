@@ -5,6 +5,8 @@
   "reporter":"mochawesome",
   "reporterOptions":{
     "reportdir":"cypress/report/mochawesome-report",
+    "mochaFile": "cypress/reports/junit/test-results-[hash].xml",
+    "toConsole" : true,
     "overwrite":false,
     "html":true,
     "json": false,
