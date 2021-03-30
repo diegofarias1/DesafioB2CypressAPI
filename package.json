@@ -6,14 +6,18 @@
   "scripts": {
     "cy:run": "cypress run --record --key b03500cd-a42c-4159-ba47-52438b603d6e",
     "start": "node your-script.js",
+    "cy": "cypress run",
     "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/integration -a '\"--config baseUrl=http://localhost:8989\"'",
-    "pretest": "npm run clean-reports",
-    "clean-reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
-    "test": "cypress run",
-    "posttest": "npm run combine-reports && npm run generate-report",
-    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json >cypress/reports/mochareports/report.json",
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "pretest": "npm run clean:reports",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
     "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
-    "projectId": "z5qrsa"
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "projectId": "z5qrsa",
+    "testing": "npm run scripts",
+    "scripts": "cypress running",
+    "runHeadless": "npm run headless",
+    "cypress:verify": "cypress verify"
   },
   "keywords": [],
   "author": "",
@@ -24,16 +28,16 @@
     "cypress": "^6.1.0",
     "cypress-multi-reporters": "^1.4.0",
     "mocha": "^8.3.2",
+    "mocha-junit-reporter": "^2.0.0",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
-    "mochawesome-report-generator": "^5.1.0"
+    "mochawesome-report-generator": "^5.2.0"
   },
   "dependencies": {
     "@types/lodash": "^4.14.168",
     "chai": "^4.3.3",
     "cypress-parallel": "^0.1.9",
     "faker": "^5.1.0",
-    "mocha-junit-reporter": "^2.0.0",
     "mysql": "^2.18.1"
   }
 }
