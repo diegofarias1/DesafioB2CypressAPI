@@ -7,7 +7,7 @@
     "cy:run": "cypress run --record --key b03500cd-a42c-4159-ba47-52438b603d6e",
     "start": "node your-script.js",
     "cy": "cypress run",
-    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/integration -a '\"--config baseUrl=http://localhost:8989\"'",
+    "dashtest": "cypress-parallel -s cy:run -t 2 -d cypress/integration -a '\"--config baseUrl=http://localhost:8989\"'",
     "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
     "pretest": "npm run clean:reports",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
