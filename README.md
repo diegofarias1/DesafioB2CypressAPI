@@ -1,4 +1,5 @@
 ## Desafio testes de API - Cypress
+- Foi utilizaddo o MantisBT local e criado um agent pool no azure devops para rodar os testes.
 
 ## Arquitetura do Projeto - Cypress
 
