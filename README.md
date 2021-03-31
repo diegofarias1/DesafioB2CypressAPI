@@ -19,10 +19,10 @@
 ## Metas
 
 - [x]	1) Implementar 50 scripts de testes que manipulem uma aplicação cuja interface é uma API REST. 
-			Foram criados 51 scripts de teste API localizados no em cypress/integration
+	- Foram criados 51 scripts de teste API localizados no em cypress/integration
 
 - [x]	2) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven.
-			Criado um arquivo de exemplo de DDT no caminho cypress/integration/proects/proectsDataDriven.spec.js
+	- Criado um arquivo de exemplo de DDT no caminho cypress/integration/proects/proectsDataDriven.spec.js
 
 - [x]	3) O projeto deve tratar autenticação.
 			Tratado autenticação nos scripts de test.
