@@ -2,15 +2,11 @@
   "baseUrl": "http://localhost:8989/",
   "token1": "v_lPkzTUTNmN8Dgv0G4gYz0sTKX6lXHb",
   "token": "wxDoWJV9Ar9NvaruhWXEvkMeYvVT1O2V",
-  "reporter":"mochawesome",
-  "reporterOptions":{
-    "reportdir":"cypress/report/mochawesome-report",
-    "mochaFile": "cypress/reports/junit/test-results-[hash].xml",
-    "toConsole" : true,
-    "overwrite":false,
-    "html":true,
-    "json": false,
-    "timestamp":"mmddyyyy_HHMMss" 
+  "reporter": "junit",
+  "reporterOptions": {
+      "mochaFile": "results/cypress-and-azure-devops-[hash].xml",
+      "toConsole": true,
+      "html": false
   },
   "projectId": "5hkedp"
 }

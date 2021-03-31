@@ -1,0 +1,54 @@
+pool:
+  name: Diego
+trigger:
+  - none
+
+steps:
+  - powershell: |
+      $var = (gci env:*).GetEnumerator() | Sort-Object Name
+      $out = ""
+      Foreach ($v in $var) {$out = $out + "`t{0,-28} = {1,-28}`n" -f $v.Name, $v.Value}
+       
+      write-output "dump variables on $env:BUILD_ARTIFACTSTAGINGDIRECTORY\test.md"
+      $fileName = "$env:BUILD_ARTIFACTSTAGINGDIRECTORY\test.md"
+      set-content $fileName $out
+       
+      write-output "##vso[task.addattachment type=Distributedtask.Core.Summary;name=Environment Variables;]$fileName"
+    displayName: "Publish all build variables"
+  - task: NodeTool@0
+    displayName: "Install Node.js"
+    inputs:
+      versionSpec: 10.x
+
+  - script: "npm install"
+    displayName: "npm Install"
+  
+  - script: "npm install mysql"
+    displayName: "npm install mysql "
+
+  - script: "npm run cy:verify"
+    displayName: "Cypress Verify"
+
+  - script: "npm run cy:run"
+    displayName: "Run Cypress tests"
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: cypress-and-azure-devops Screenshots "
+    inputs:
+      PathtoPublish: cypress/screenshots
+      ArtifactName: CypressAndAzureDevopsTestRunScreenshots
+    condition: failed()
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: cypress-and-azure-devops Videos "
+    inputs:
+      PathtoPublish: cypress/videos
+      ArtifactName: CypressAndAzureDevopsTestRunVideos
+    condition: succeededOrFailed()
+
+  - task: PublishTestResults@2
+    displayName: "Publish Test Results"
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFormat: "JUnit"
+      testResultsFiles: "**/cypress-and-azure-devops-*.xml"
